@@ -7,9 +7,11 @@ b64 = str(base64.b64encode(bytes(saves, "utf-8"))) + "!END!"
 sauvegarde = str(b64)[2:]
 
 with open("statsGen.txt", "w") as f:
-    f.write(sauvegarde)   
+    f.write(sauvegarde)
 
 os.system("CLIP < statsGen.txt")
 os.remove("statsGen.txt")
 
 print("Votre sauvegarde cracké a été ajoutée avec succès dans votre presse-papier !")
+print("---------------SAUVEGARDE---------------")
+print(sauvegarde[:-8])
